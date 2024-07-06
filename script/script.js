@@ -23,13 +23,12 @@ console.log(filterIsOpen);
 
 //DESAFIO
 //4) Crie uma função que filtre apenas o hotel com o nome “Copacabana Palace”. Após isso, crie outra função para verificar as datas disponíveis para agendamento nesse hotel (isAvaliable).
-const filterHotelName = data.filter ((element) => {
-  
-  return element.name === "Copacabana Palace"
+function filterHotelName(array) {
+  return array.find(hotel => hotel.name === "Copacabana Palace");
+}
 
-})
-
-console.log(filterHotelName);
-
-
-console.log(filterToBook);
+function filterToBook() {
+  const hotel = filterHotelName(data);
+  return hotel.toBook.filter(booking => booking.isAvaliable);
+}
+console.log(filterToBook());
